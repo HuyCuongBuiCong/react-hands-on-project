@@ -7,10 +7,11 @@ const FormikTextField = (props) => {
   const {
     touched, errors, handleChange, handleBlur, values,
   } = formik;
-  const classes = useStyle;
+  const classes = useStyle();
   return (
     <TextField
       type={type}
+      fullWidth
       name={name}
       className={classes.formField}
       error={touched[name] && errors[name]}

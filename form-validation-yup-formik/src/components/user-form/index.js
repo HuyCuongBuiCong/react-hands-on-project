@@ -40,7 +40,7 @@ function UserForm() {
     <div className={classes.container}>
       <div className={classes.box}>
         <Typography variant="h5" color="secondary">
-          Form Validation
+          FORM VALIDATION
         </Typography>
 
         <form onSubmit={formik.handleSubmit} className={classes.form}>
@@ -70,6 +70,7 @@ function UserForm() {
           <Button variant="contained" color="primary" type="submit"> Submit </Button>
         </form>
       </div>
+
     </div>
   );
 }
