@@ -21,6 +21,9 @@ const useStyle = makeStyles((theme) => ({
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
+        [theme.breakpoints.down('sm')]:{
+            width: 'calc(100% - 20px)'
+        }
     },
     button: {
         margin: "5px"

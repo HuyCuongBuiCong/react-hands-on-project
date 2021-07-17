@@ -21,7 +21,7 @@ const useStyle = makeStyles((theme) => ({
     height: '50%',
     [theme.breakpoints.down('sm')]: {
       height: '60%',
-      width: '90%',
+      width: 'calc(100% - 40px)',
     },
   },
   form: {
