@@ -1,38 +1,17 @@
-import Grid from '@material-ui/core/Grid';
-import Post from '../post';
-import React from 'react';
+import React, {useState} from 'react';
 import useStyle from './style';
+import TopBar from './TopBar';
+import GridView from './GridView';
+import ListView from './ListView';
+
 
 const PostList = function () {
 	const classes = useStyle();
+	const [viewMode, setViewMode] = useState('list');
 	return(
 		<div className={classes.root}>
-			<Grid container spacing={ 2 }>
-				<Grid item sm={ 6 } md={ 3 }>
-					<Post/>
-				</Grid>
-				<Grid item sm={ 6 } md={ 3 }>
-					<Post/>
-				</Grid>
-				<Grid item sm={ 6 } md={ 3 }>
-					<Post/>
-				</Grid>
-				<Grid item sm={ 6 } md={ 3 }>
-					<Post/>
-				</Grid>
-				<Grid item sm={ 6 } md={ 3 }>
-					<Post/>
-				</Grid>
-				<Grid item sm={ 6 } md={ 3 }>
-					<Post/>
-				</Grid>
-				<Grid item sm={ 6 } md={ 3 }>
-					<Post/>
-				</Grid>
-				<Grid item sm={ 6 } md={ 3 }>
-					<Post/>
-				</Grid>
-			</Grid>
+			<TopBar viewMode={viewMode} setViewMode={setViewMode}/>
+			{viewMode === 'grid' ? <GridView /> : <ListView/>}
 		</div>  
 	);
 };

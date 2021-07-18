@@ -1,34 +1,33 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {useStyles} from './style';
+import {useListStyles, useGridStyles} from './style';
 
-export default function Post() {
-	const classes = useStyles();
+export default function Post(props) {
+	const {viewMode, title} = props;
+	const classes = viewMode === 'list' ? useListStyles() : useGridStyles();
 
 	return (
 		<Card className={classes.root}>
-			<CardActionArea>
+			<div className={classes.cardMedia}>
 				<CardMedia
 					className={classes.media}
-					image="/static/images/cards/contemplative-reptile.jpg"
-					title="Contemplative Reptile"
+					image="javascript.jpeg"
+					title={title}
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="h2">
-                        Lizard
+						{title}
 					</Typography>
 					<Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
+						JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.
 					</Typography>
 				</CardContent>
-			</CardActionArea>
+			</div>
 			<CardActions>
 				<Button size="small" color="primary">
                     Share
