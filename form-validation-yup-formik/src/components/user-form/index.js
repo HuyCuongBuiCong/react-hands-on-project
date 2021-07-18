@@ -44,31 +44,34 @@ function UserForm() {
         </Typography>
 
         <form onSubmit={formik.handleSubmit} className={classes.form}>
-          <FormikTextField name="email" type="text" formik={formik} />
-          <FormikTextField name="password" type="password" formik={formik} />
-          <FormikTextField name="professional" type="text" formik={formik} />
-          <FormikTextField name="age" type="number" formik={formik} />
-          <FormControl>
-            <InputLabel htmlFor="gender">GENDER</InputLabel>
-            <Select
-              className={classes.formField}
-              native
-              error={formik.touched.gender && formik.errors.gender}
-              value={formik.values.gender}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              inputProps={{
-                name: 'gender',
-                id: 'gender',
-              }}
-            >
-              <option aria-label="None" value="" />
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </Select>
-          </FormControl>
+          <div className={classes.inputs}>
+            <FormikTextField name="email" type="text" formik={formik} />
+            <FormikTextField name="password" type="password" formik={formik} />
+            <FormikTextField name="professional" type="text" formik={formik} />
+            <FormikTextField name="age" type="number" formik={formik} />
+            <FormControl>
+              <InputLabel htmlFor="gender">GENDER</InputLabel>
+              <Select
+                className={classes.formField}
+                native
+                error={formik.touched.gender && formik.errors.gender}
+                value={formik.values.gender}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                inputProps={{
+                  name: 'gender',
+                  id: 'gender',
+                }}
+              >
+                <option aria-label="None" value="" />
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </Select>
+            </FormControl>
+          </div>
           <Button variant="contained" color="primary" type="submit"> Submit </Button>
         </form>
+
       </div>
 
     </div>

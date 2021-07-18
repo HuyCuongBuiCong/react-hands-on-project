@@ -27,9 +27,14 @@ const useStyle = makeStyles((theme) => ({
   form: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
     width: '100%',
-    height: '90%',
+    flexGrow: '1',
+  },
+  inputs: {
+    flexGrow: '1',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   header: {
     fontSize: '50px',
