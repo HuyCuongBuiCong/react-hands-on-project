@@ -8,7 +8,7 @@ import { useFormik } from 'formik';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import useStyle from './style';
-import FormikTextField from './formikTextField';
+import FormikTextField from './FormikTextField';
 
 const userSchema = object({
   email: string().email().required('Enter email'),
